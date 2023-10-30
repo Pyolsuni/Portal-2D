@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
         Sequence LevelTextSequence = DOTween.Sequence();
         LevelTextSequence.Append(LevelText.DOFade(1, 2f))
             .AppendInterval(2)
-            .Append(LevelText.transform.DOMoveY(1120, 2))
+            .Append(LevelText.transform.DOMoveY(Screen.height, 2))
             .Join(LevelText.DOFade(0, 2f));
     }
 
