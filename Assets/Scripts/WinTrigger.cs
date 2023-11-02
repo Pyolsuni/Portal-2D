@@ -10,7 +10,7 @@ public class WinTrigger : MonoBehaviour
 
     private void Awake()
     {
-        WinLevelPanel.transform.position = new Vector3(WinLevelPanel.transform.position.x, Screen.height*2, WinLevelPanel.transform.position.z);
+        WinLevelPanel.transform.position = new Vector3(WinLevelPanel.transform.position.x, Screen.height*2.5f, WinLevelPanel.transform.position.z);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
