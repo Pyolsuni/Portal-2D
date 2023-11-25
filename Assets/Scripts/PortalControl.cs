@@ -35,8 +35,6 @@ public class PortalControl : MonoBehaviour
             {
                 var instantiatedClone = Instantiate(player, bluePortalSpawnPoint.position, Quaternion.identity);
                 instantiatedClone.gameObject.name = "Clone";
-                equalizer.targetObject = instantiatedClone.GetComponent<Rigidbody2D>();
-                equalizer.sourceObject = toMimic;
             }
             else if (whatToCreate == "Box")
             {
@@ -52,8 +50,6 @@ public class PortalControl : MonoBehaviour
             {
                 var instantiatedClone = Instantiate(player, orangePortalSpawnPoint.position, Quaternion.identity);
                 instantiatedClone.gameObject.name = "Clone";
-                equalizer.targetObject = instantiatedClone.GetComponent<Rigidbody2D>();
-                equalizer.sourceObject = toMimic;
             }
             else if (whatToCreate == "Box")
             {
