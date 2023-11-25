@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    public GameObject MainMenuButtons;
+    public GameObject LevelSelectionButtons;
+
+    public void OnSelectLevelPressed() {
+        MainMenuButtons.SetActive(false);
+        LevelSelectionButtons.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OnBackButtonPressed() {
+        MainMenuButtons.SetActive(true);
+        LevelSelectionButtons.SetActive(false);
     }
 
     public void ExitGame() {
