@@ -11,9 +11,11 @@ public class HoverFill : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public Image image;
     private bool inBounds;
 
+    public float fillSpeed = 0.04f;
+
     private void Update() {
-        if (inBounds) { image.fillAmount += 0.04f; }
-        else { image.fillAmount -= 0.04f; }
+        if (inBounds) { image.fillAmount += fillSpeed; }
+        else { image.fillAmount -= fillSpeed; }
     }
 
     private void OnDisable() {
