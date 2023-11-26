@@ -9,7 +9,7 @@ public class SelectLevel : MonoBehaviour
     public TextMeshProUGUI levelText;
 
     public void OnLevelSelectClicked() {
-        SceneManager.LoadScene("Scenes/Level" + levelText.text + "Scene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Scenes/Level" + levelText.text + "Scene");
     }
 
 }

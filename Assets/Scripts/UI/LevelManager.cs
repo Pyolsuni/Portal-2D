@@ -24,9 +24,4 @@ public class LevelManager : MonoBehaviour
             .Append(LevelText.transform.DOMoveY(Screen.height, 2))
             .Join(LevelText.DOFade(0, 2f));
     }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }
