@@ -8,6 +8,7 @@ public class Button : MonoBehaviour
     public Sprite Active;
     public bool Pressed = false;
     private SpriteRenderer Renderer;
+    public AudioSource audioClip;
 
     private void Start()
     {
@@ -19,6 +20,8 @@ public class Button : MonoBehaviour
         Renderer.sprite = Active;
         Events.ButtonPressed(gameObject);
         Pressed = true;
+        audioClip = GetComponent<AudioSource>();
+        audioClip.Play(0);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
