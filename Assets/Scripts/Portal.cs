@@ -75,7 +75,7 @@ public class Portal : MonoBehaviour
             {
                 toSpawnFirst = null;
                 runTimer = true;
-                noReEnterTime = 0.3f;
+                noReEnterTime = 0.5f;
             }
         }
         else

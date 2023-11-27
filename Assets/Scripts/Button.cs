@@ -21,7 +21,7 @@ public class Button : MonoBehaviour
         Events.ButtonPressed(gameObject);
         Pressed = true;
         audioClip = GetComponent<AudioSource>();
-        audioClip.Play(0);
+        if (audioClip != null) audioClip.Play(0);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
