@@ -2067,6 +2067,7 @@ MonoBehaviour:
   Inactive: {fileID: -1512950404, guid: 78186a17846fa6346a3413804e715f5c, type: 3}
   Active: {fileID: -1916396343, guid: 78186a17846fa6346a3413804e715f5c, type: 3}
   Pressed: 0
+  audioClip: {fileID: 0}
 --- !u!58 &635238330
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4836,7 +4837,7 @@ Transform:
   m_GameObject: {fileID: 1463806902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 2.25, z: 0}
+  m_LocalPosition: {x: -7.5, y: 2.25, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
