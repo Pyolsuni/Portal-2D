@@ -6,12 +6,22 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+[HelpURL("https://forum.unity.com/threads/how-to-use-onpointerenter-event.294801/#post-1942607")]
 public class HoverFill : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
-    public Image image;
+    [SerializeField]
+    private Image image;
     private bool inBounds;
 
+    [Tooltip("Change button's fill speed.")]
+    [ContextMenuItem(name: "Change to default value", function: "DefaultFillSpeed")]
+    [Range(0, 1)]
     public float fillSpeed = 0.04f;
+
+    [ContextMenu("DefaultFillSpeed")]
+    private void DefaultFillSpeed() {
+        fillSpeed = 0.04f;
+    }
 
     private void Update() {
         if (inBounds) { image.fillAmount += fillSpeed; }
@@ -30,4 +40,5 @@ public class HoverFill : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void OnPointerExit(PointerEventData eventData) {
         inBounds = false;
     }
+
 }
