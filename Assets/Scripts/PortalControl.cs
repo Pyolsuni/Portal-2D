@@ -15,7 +15,7 @@ public class PortalControl : MonoBehaviour
     private Collider2D bluePortalCollider, orangePortalCollider;
 
     [SerializeField]
-    private GameObject player, box;
+    private GameObject player, cube;
 
     [SerializeField]
     private VelocityEqualizer equalizer;
@@ -36,9 +36,9 @@ public class PortalControl : MonoBehaviour
                 var instantiatedClone = Instantiate(player, bluePortalSpawnPoint.position, Quaternion.identity);
                 instantiatedClone.gameObject.name = "Clone";
             }
-            else if (whatToCreate == "Box")
+            else if (whatToCreate == "Cube")
             {
-                var instantiatedClone = Instantiate(box, bluePortalSpawnPoint.position, Quaternion.identity);
+                var instantiatedClone = Instantiate(cube, bluePortalSpawnPoint.position, Quaternion.identity);
                 instantiatedClone.gameObject.name = "Clone";
                 equalizer.targetObject = instantiatedClone.GetComponent<Rigidbody2D>();
                 equalizer.sourceObject = toMimic;
@@ -51,9 +51,9 @@ public class PortalControl : MonoBehaviour
                 var instantiatedClone = Instantiate(player, orangePortalSpawnPoint.position, Quaternion.identity);
                 instantiatedClone.gameObject.name = "Clone";
             }
-            else if (whatToCreate == "Box")
+            else if (whatToCreate == "Cube")
             {
-                var instantiatedClone = Instantiate(box, orangePortalSpawnPoint.position, Quaternion.identity);
+                var instantiatedClone = Instantiate(cube, orangePortalSpawnPoint.position, Quaternion.identity);
                 instantiatedClone.gameObject.name = "Clone";
                 equalizer.targetObject = instantiatedClone.GetComponent<Rigidbody2D>();
                 equalizer.sourceObject = toMimic;

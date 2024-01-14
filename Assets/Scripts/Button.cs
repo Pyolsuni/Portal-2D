@@ -10,6 +10,8 @@ public class Button : MonoBehaviour
     private SpriteRenderer Renderer;
     public AudioSource audioClip;
 
+    private int objectCount = 0;
+
     private void Start()
     {
         Renderer = gameObject.GetComponent<SpriteRenderer>();
@@ -21,12 +23,17 @@ public class Button : MonoBehaviour
         Events.ButtonPressed(gameObject);
         Pressed = true;
         audioClip = GetComponent<AudioSource>();
-        if (audioClip != null) audioClip.Play(0);
+        if (audioClip != null && !audioClip.isPlaying) audioClip.Play(0);
+        objectCount++;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Renderer.sprite = Inactive;
-        Events.ButtonReleased(gameObject);
-        Pressed = false;
+        objectCount--;
+        if (objectCount <= 0)
+        {
+            Renderer.sprite = Inactive;
+            Events.ButtonReleased(gameObject);
+            Pressed = false;
+        }
     }
 }
