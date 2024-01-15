@@ -13,7 +13,16 @@ public class VelocityEqualizer : MonoBehaviour
         if (targetObject != null && sourceObject != null)
         {
             // Set the velocity of the targetObject to match the velocity of the sourceObject
-            targetObject.velocity = sourceObject.velocity;
+            if (Mathf.Abs(((targetObject.velocity.x + targetObject.velocity.y) / 2)) > Mathf.Abs(((sourceObject.velocity.x + sourceObject.velocity.y) / 2)))
+            {
+                Debug.Log("Moving source");
+                sourceObject.velocity = targetObject.velocity;
+            }
+            else
+            {
+                Debug.Log("Moving target");
+                targetObject.velocity = sourceObject.velocity;
+            }
         }
     }
 }

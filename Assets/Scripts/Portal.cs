@@ -5,8 +5,7 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     private Rigidbody2D enteredRigidBody;
-    private GameObject toSpawnFirst;
-    private GameObject toSpawnSecond;
+    private List<GameObject> spawned = new List<GameObject>();
     private float noReEnterTime = 0f;
     private bool runTimer = false;
 
@@ -25,54 +24,36 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (toSpawnFirst == null)
-        {
-            toSpawnFirst = collision.gameObject;
-        }
-        else if (toSpawnSecond == null)
-        {
-            toSpawnSecond = collision.gameObject;
-        }
+        spawned.Add(collision.gameObject);
         enteredRigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
         //Debug.Log(gameObject.name + " Triggerenter: " + toSpawnFirst.name + " " + toSpawnSecond.name);
         if (gameObject.name == "BluePortal")
         {
             PortalControl.Instance.DisableCollider("Orange");
-            if (toSpawnSecond == null) PortalControl.Instance.CreateClone("Orange", toSpawnFirst.name, collision.gameObject.GetComponent<Rigidbody2D>());
-            else PortalControl.Instance.CreateClone("Orange", toSpawnSecond.name, collision.gameObject.GetComponent<Rigidbody2D>());
+            PortalControl.Instance.CreateClone("Orange", spawned[spawned.Count - 1].name, collision.gameObject.GetComponent<Rigidbody2D>());
         }
         else if (gameObject.name == "OrangePortal")
         {
             PortalControl.Instance.DisableCollider("Blue");
-            if (toSpawnSecond == null) PortalControl.Instance.CreateClone("Blue", toSpawnFirst.name, collision.gameObject.GetComponent<Rigidbody2D>());
-            else PortalControl.Instance.CreateClone("Blue", toSpawnSecond.name, collision.gameObject.GetComponent<Rigidbody2D>());
+            PortalControl.Instance.CreateClone("Blue", spawned[spawned.Count - 1].name, collision.gameObject.GetComponent<Rigidbody2D>());
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name != "Clone")
         {
-            Debug.Log(gameObject.name + " Triggerexit: " + toSpawnFirst + " " + toSpawnSecond);
+            Debug.Log(gameObject.name + " Triggerexit: " + spawned[0].name);
             Debug.Log(collision.gameObject.name);
+            int index = spawned.IndexOf(collision.gameObject);
             Destroy(collision.gameObject);
-            if (toSpawnFirst.name == "Player")
+            if (spawned[index].name == "Player")
             {
                 GameObject.Find("Clone").name = "Player";
             }
-            else if (toSpawnFirst.name == "Cube") GameObject.Find("Clone").name = "Cube";
-            if (toSpawnSecond != null)
-            {
-                toSpawnFirst = toSpawnSecond;
-                toSpawnSecond = null;
-                Debug.Log("toSpawnSecond");
-            }
-            else
-            {
-                toSpawnFirst = null;
-                runTimer = true;
-                noReEnterTime = 0.5f;
-                Debug.Log("toSpawnFirst");
-            }
+            else if (spawned[index].name == "Cube") GameObject.Find("Clone").name = "Cube";
+            spawned.RemoveAt(index);
+            runTimer = true;
+            noReEnterTime = 0.5f;
         }
         else
         {

@@ -19,7 +19,6 @@ public class PortalControl : MonoBehaviour
 
     [SerializeField]
     private VelocityEqualizer equalizer;
-    // Start is called before the first frame update
     void Start()
     {
         Instance = this;
