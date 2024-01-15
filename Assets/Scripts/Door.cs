@@ -14,15 +14,22 @@ public class Door : MonoBehaviour
 
     public int ButtonsNeeded;
     private int buttonsPressed;
+
+    public int LasersNeeded;
+    private int lasersReceived;
     private void Awake()
     {
         Events.OnButtonPressed += ButtonPressed;
         Events.OnButtonReleased += ButtonReleased;
+        Events.OnLaserReceived += LaserReceived;
+        Events.OnLaserRemoved += LaserRemoved;
     }
     private void OnDestroy()
     {
         Events.OnButtonReleased -= ButtonReleased;
         Events.OnButtonPressed -= ButtonPressed;
+        Events.OnLaserReceived -= LaserReceived;
+        Events.OnLaserRemoved -= LaserRemoved;
     }
 
     public void ButtonPressed(GameObject button)
@@ -36,6 +43,20 @@ public class Door : MonoBehaviour
     public void ButtonReleased(GameObject button)
     {
         buttonsPressed--;
+        CloseDoors();
+    }
+
+    public void LaserReceived(GameObject button)
+    {
+        lasersReceived++;
+        if (lasersReceived >= LasersNeeded)
+        {
+            OpenDoors();
+        }
+    }
+    public void LaserRemoved(GameObject button)
+    {
+        lasersReceived--;
         CloseDoors();
     }
     private void OpenDoors()

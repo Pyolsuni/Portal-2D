@@ -26,7 +26,7 @@ public class Portal : MonoBehaviour
     {
         spawned.Add(collision.gameObject);
         enteredRigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
-        //Debug.Log(gameObject.name + " Triggerenter: " + toSpawnFirst.name + " " + toSpawnSecond.name);
+        Debug.Log(gameObject.name + " Triggerenter: " + spawned[spawned.Count - 1].name);
         if (gameObject.name == "BluePortal")
         {
             PortalControl.Instance.DisableCollider("Orange");

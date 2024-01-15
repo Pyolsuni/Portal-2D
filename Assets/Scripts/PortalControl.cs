@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PortalControl : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class PortalControl : MonoBehaviour
 
     [SerializeField]
     private GameObject blueportal, orangeportal;
+
+    [SerializeField]
+    private GameObject blueportallaser, orangeportallaser;
+
+    private PortalLaser bluelaser, orangelaser;
 
     [SerializeField]
     private Transform bluePortalSpawnPoint, orangePortalSpawnPoint;
@@ -24,6 +30,8 @@ public class PortalControl : MonoBehaviour
         Instance = this;
         bluePortalCollider = blueportal.GetComponent<Collider2D>();
         orangePortalCollider = orangeportal.GetComponent<Collider2D>();
+        bluelaser = blueportallaser.GetComponent<PortalLaser>();
+        orangelaser = orangeportallaser.GetComponent<PortalLaser>();
     }
 
     public void CreateClone(string whereToCreate, string whatToCreate, Rigidbody2D toMimic)
@@ -76,5 +84,23 @@ public class PortalControl : MonoBehaviour
     {
         orangePortalCollider.enabled = true;
         bluePortalCollider.enabled = true;
+    }
+
+    public void EnableLaser(GameObject portal, Vector2 offset)
+    {
+        if (portal == blueportal)
+        {
+            orangelaser.EnableLaser(offset);
+        }
+        else if (portal == orangeportal)
+        {
+            bluelaser.EnableLaser(offset);
+        }
+    }
+
+    public void DisableLasers()
+    {
+        orangelaser.DisableLaser();
+        bluelaser.DisableLaser();
     }
 }

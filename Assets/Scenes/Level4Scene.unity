@@ -155,6 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blueportal: {fileID: 1817780958}
   orangeportal: {fileID: 1621579281}
+  blueportallaser: {fileID: 641907380}
+  orangeportallaser: {fileID: 888222123}
   bluePortalSpawnPoint: {fileID: 165025020}
   orangePortalSpawnPoint: {fileID: 841855940}
   player: {fileID: 4723994824695207900, guid: 734eb6aeab874dd4f9609f00a67e4ece, type: 3}
@@ -242,6 +244,7 @@ MonoBehaviour:
   RightDoorOpen: {fileID: -908848369, guid: 7cf10ff865bf53f4ea43187696a312bd, type: 3}
   RightDoorClosed: {fileID: 1371797117, guid: 7cf10ff865bf53f4ea43187696a312bd, type: 3}
   ButtonsNeeded: 1
+  LasersNeeded: 0
 --- !u!1 &153953048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,6 +2214,11 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.515625
+--- !u!1 &641907380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4839152019257183110, guid: 49da984b04896a040b7574d0aef08bc9, type: 3}
+  m_PrefabInstance: {fileID: 5345060561712938627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &741646111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,6 +2448,11 @@ PrefabInstance:
 --- !u!4 &841855940 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7189965691470039818, guid: 0b6d276059c5cfd428cd75aae31cf858, type: 3}
+  m_PrefabInstance: {fileID: 6852718740584957071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &888222123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6006743998865484763, guid: 0b6d276059c5cfd428cd75aae31cf858, type: 3}
   m_PrefabInstance: {fileID: 6852718740584957071}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &911334913
