@@ -17,10 +17,6 @@ public class PauseMenu : MonoBehaviour {
     public AudioSource selectAudio;
 
 
-    private void Awake() {
-        
-    }
-
     private void Start() {
         ppVolume = Camera.main.gameObject.GetComponent<PostProcessVolume>();
         ppVolume.enabled = false;
@@ -62,6 +58,12 @@ public class PauseMenu : MonoBehaviour {
         selectAudio.Play();
         PausePanel.SetActive(false);
         OptionsPanel.SetActive(true);
+    }
+
+    public void OnRestartLevelPressed() {
+        selectAudio.Play();
+        Unpause();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void OnMainMenuPressed() {
