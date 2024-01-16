@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 [HelpURL("https://forum.unity.com/threads/how-to-use-onpointerenter-event.294801/#post-1942607")]
 public class HoverFill : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
@@ -17,6 +18,12 @@ public class HoverFill : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     [ContextMenuItem(name: "Change to default value", function: "DefaultFillSpeed")]
     [Range(0, 1)]
     public float fillSpeed = 0.04f;
+
+    public AudioSource hoverAudio;
+
+    private void Start() {
+        hoverAudio.volume = PlayerPrefs.GetFloat("SoundVolume")/20;
+    }
 
     [ContextMenu("DefaultFillSpeed")]
     private void DefaultFillSpeed() {
@@ -34,6 +41,7 @@ public class HoverFill : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
+        hoverAudio.Play();
         inBounds = true;
     }
 
