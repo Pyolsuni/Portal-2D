@@ -1838,6 +1838,10 @@ PrefabInstance:
       propertyPath: Button
       value: 
       objectReference: {fileID: 635238326}
+    - target: {fileID: 1091209111607279381, guid: 53e4587ebb97b7f4ab3b9036330c75ab, type: 3}
+      propertyPath: Activator
+      value: 
+      objectReference: {fileID: 635238326}
     - target: {fileID: 1814043049036600764, guid: 53e4587ebb97b7f4ab3b9036330c75ab, type: 3}
       propertyPath: m_Name
       value: path_corner
@@ -2505,6 +2509,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1091209111607279381, guid: 53e4587ebb97b7f4ab3b9036330c75ab, type: 3}
       propertyPath: Button
+      value: 
+      objectReference: {fileID: 635238326}
+    - target: {fileID: 1091209111607279381, guid: 53e4587ebb97b7f4ab3b9036330c75ab, type: 3}
+      propertyPath: Activator
       value: 
       objectReference: {fileID: 635238326}
     - target: {fileID: 1814043049036600764, guid: 53e4587ebb97b7f4ab3b9036330c75ab, type: 3}
@@ -5185,6 +5193,10 @@ PrefabInstance:
       propertyPath: Button
       value: 
       objectReference: {fileID: 635238326}
+    - target: {fileID: 4920287464104614664, guid: 42a88f7ff6e3f8b43b0e7b91e49bcda2, type: 3}
+      propertyPath: Activator
+      value: 
+      objectReference: {fileID: 635238326}
     - target: {fileID: 6103606038591286547, guid: 42a88f7ff6e3f8b43b0e7b91e49bcda2, type: 3}
       propertyPath: m_Name
       value: path_straight (1)
@@ -5612,6 +5624,10 @@ PrefabInstance:
       propertyPath: Button
       value: 
       objectReference: {fileID: 635238326}
+    - target: {fileID: 1091209111607279381, guid: 53e4587ebb97b7f4ab3b9036330c75ab, type: 3}
+      propertyPath: Activator
+      value: 
+      objectReference: {fileID: 635238326}
     - target: {fileID: 1814043049036600764, guid: 53e4587ebb97b7f4ab3b9036330c75ab, type: 3}
       propertyPath: m_Name
       value: path_corner (1)
@@ -5636,6 +5652,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4920287464104614664, guid: 42a88f7ff6e3f8b43b0e7b91e49bcda2, type: 3}
       propertyPath: Button
+      value: 
+      objectReference: {fileID: 635238326}
+    - target: {fileID: 4920287464104614664, guid: 42a88f7ff6e3f8b43b0e7b91e49bcda2, type: 3}
+      propertyPath: Activator
       value: 
       objectReference: {fileID: 635238326}
     - target: {fileID: 6103606038591286547, guid: 42a88f7ff6e3f8b43b0e7b91e49bcda2, type: 3}
@@ -5842,6 +5862,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4920287464104614664, guid: 42a88f7ff6e3f8b43b0e7b91e49bcda2, type: 3}
       propertyPath: Button
+      value: 
+      objectReference: {fileID: 635238326}
+    - target: {fileID: 4920287464104614664, guid: 42a88f7ff6e3f8b43b0e7b91e49bcda2, type: 3}
+      propertyPath: Activator
       value: 
       objectReference: {fileID: 635238326}
     - target: {fileID: 6103606038591286547, guid: 42a88f7ff6e3f8b43b0e7b91e49bcda2, type: 3}
