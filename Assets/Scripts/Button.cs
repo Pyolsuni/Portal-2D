@@ -19,11 +19,14 @@ public class Button : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Renderer.sprite = Active;
-        Events.ButtonPressed(gameObject);
-        Pressed = true;
-        audioClip = GetComponent<AudioSource>();
-        if (audioClip != null && !audioClip.isPlaying) audioClip.Play(0);
+        if (objectCount == 0)
+        {
+            Renderer.sprite = Active;
+            Events.ButtonPressed(gameObject);
+            Pressed = true;
+            audioClip = GetComponent<AudioSource>();
+            if (audioClip != null && !audioClip.isPlaying) audioClip.Play(0);
+        }
         objectCount++;
     }
     private void OnTriggerExit2D(Collider2D collision)
