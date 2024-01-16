@@ -9,6 +9,8 @@ public class MainMenuManager : MonoBehaviour
 
     public GameObject LevelSelectionButtons;
 
+    public GameObject OptionButtons;
+
     public void OnSelectLevelPressed() {
         MainMenuButtons.SetActive(false);
         LevelSelectionButtons.SetActive(true);
@@ -17,6 +19,13 @@ public class MainMenuManager : MonoBehaviour
     public void OnBackButtonPressed() {
         MainMenuButtons.SetActive(true);
         LevelSelectionButtons.SetActive(false);
+        OptionButtons.SetActive(false);
+    }
+
+    public void OnOptionsPressed() {
+        OptionButtons.SetActive(true);
+        MainMenuButtons.SetActive(false);
+        
     }
 
     public void ExitGame() {
