@@ -5561,7 +5561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EndPoint: {x: 2.25, y: -3}
-  MovementTime: 5
+  MovementTime: 10
   Return: 1
 --- !u!1001 &1985674117
 PrefabInstance:
