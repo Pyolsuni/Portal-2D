@@ -257,9 +257,13 @@ PolygonCollider2D:
     - - {x: 1.1999019, y: 0.86699665}
       - {x: 0.20277637, y: 0.86420166}
       - {x: 0.2068211, y: 0.73362577}
-      - {x: 1.1123694, y: 0.72425276}
-      - {x: 1.110679, y: -0.69906574}
-      - {x: 0.20131947, y: -0.69656605}
+      - {x: 0.35413685, y: 0.7317355}
+      - {x: 0.3538859, y: 0.84587353}
+      - {x: 1.1744365, y: 0.8455656}
+      - {x: 1.1769779, y: -0.807683}
+      - {x: 0.35178256, y: -0.8107644}
+      - {x: 0.35327098, y: -0.68556684}
+      - {x: 0.20131947, y: -0.6881023}
       - {x: 0.20001982, y: -0.8319791}
       - {x: 1.1967528, y: -0.83217305}
       - {x: 1.1958089, y: 0.27696624}
@@ -273,8 +277,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3027891162843687229}
-  - component: {fileID: 3110323006013231025}
   - component: {fileID: 3947216455059637193}
+  - component: {fileID: 3110323006013231025}
   m_Layer: 0
   m_Name: PortalLaser
   m_TagString: Untagged
@@ -298,21 +302,6 @@ Transform:
   - {fileID: 7250745664311935844}
   m_Father: {fileID: 5753731304198508092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3110323006013231025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4839152019257183110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5ed0f34cf95f843a954da0f6834fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defDistanceRay: 100
-  LaserFirePoint: {fileID: 7250745664311935844}
-  LaserLine: {fileID: 3947216455059637193}
 --- !u!120 &3947216455059637193
 LineRenderer:
   serializedVersion: 2
@@ -417,6 +406,21 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &3110323006013231025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4839152019257183110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5ed0f34cf95f843a954da0f6834fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defDistanceRay: 100
+  LaserFirePoint: {fileID: 7250745664311935844}
+  LaserLine: {fileID: 3947216455059637193}
 --- !u!1 &6714385611334790288
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,7 +35,7 @@ public class Door : MonoBehaviour
     public void ButtonPressed(GameObject button)
     {
         buttonsPressed++;
-        if (buttonsPressed >= ButtonsNeeded) 
+        if (buttonsPressed >= ButtonsNeeded && lasersReceived >= LasersNeeded) 
         {
             OpenDoors();
         }
@@ -43,13 +43,13 @@ public class Door : MonoBehaviour
     public void ButtonReleased(GameObject button)
     {
         buttonsPressed--;
-        CloseDoors();
+        if (buttonsPressed < ButtonsNeeded) CloseDoors();
     }
 
     public void LaserReceived(GameObject laser)
     {
         lasersReceived++;
-        if (lasersReceived >= LasersNeeded)
+        if (lasersReceived >= LasersNeeded && buttonsPressed >= ButtonsNeeded)
         {
             OpenDoors();
         }

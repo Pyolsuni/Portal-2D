@@ -26,16 +26,16 @@ public class Portal : MonoBehaviour
     {
         spawned.Add(collision.gameObject);
         enteredRigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
-        Debug.Log(gameObject.name + " Triggerenter: " + spawned[spawned.Count - 1].name);
+        Debug.Log(gameObject.name + " Triggerenter: " + spawned[spawned.Count - 1].tag);
         if (gameObject.name == "BluePortal")
         {
             PortalControl.Instance.DisableCollider("Orange");
-            PortalControl.Instance.CreateClone("Orange", spawned[spawned.Count - 1].name, collision.gameObject.GetComponent<Rigidbody2D>());
+            PortalControl.Instance.CreateClone("Orange", spawned[spawned.Count - 1].tag, collision.gameObject.GetComponent<Rigidbody2D>());
         }
         else if (gameObject.name == "OrangePortal")
         {
             PortalControl.Instance.DisableCollider("Blue");
-            PortalControl.Instance.CreateClone("Blue", spawned[spawned.Count - 1].name, collision.gameObject.GetComponent<Rigidbody2D>());
+            PortalControl.Instance.CreateClone("Blue", spawned[spawned.Count - 1].tag, collision.gameObject.GetComponent<Rigidbody2D>());
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -46,11 +46,11 @@ public class Portal : MonoBehaviour
             Debug.Log(collision.gameObject.name);
             int index = spawned.IndexOf(collision.gameObject);
             Destroy(collision.gameObject);
-            if (spawned[index].name == "Player")
+            if (spawned[index].tag == "Player")
             {
                 GameObject.Find("Clone").name = "Player";
             }
-            else if (spawned[index].name == "Cube") GameObject.Find("Clone").name = "Cube";
+            else if (spawned[index].tag == "Cube") GameObject.Find("Clone").name = "Cube";
             spawned.RemoveAt(index);
             runTimer = true;
             noReEnterTime = 0.5f;
