@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
 {
     public TextMeshProUGUI LevelText;
 
+    private AudioSource[] sounds;
+
     private void Awake()
     {
         DOTween.Init();
@@ -18,6 +20,12 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+
+        sounds = FindObjectsOfType<AudioSource>(true);
+        foreach (AudioSource source in sounds) {
+            source.volume = Mathf.Log10(PlayerPrefs.GetFloat("SoundVolume", 0.5f));
+        }
+
         Sequence LevelTextSequence = DOTween.Sequence();
         LevelTextSequence.Append(LevelText.DOFade(1, 2f))
             .AppendInterval(2)
