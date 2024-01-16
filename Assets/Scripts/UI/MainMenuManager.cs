@@ -15,7 +15,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start() {
         selectAudio.volume = PlayerPrefs.GetFloat("SoundVolume") / 20;
-        print("Volume: " + selectAudio.volume + "  " + PlayerPrefs.GetFloat("SoundVolume"));
+        //print("Volume: " + selectAudio.volume + "  " + PlayerPrefs.GetFloat("SoundVolume"));
     }
     public void OnSelectLevelPressed() {
         selectAudio.Play();
