@@ -46,7 +46,7 @@ public class Door : MonoBehaviour
         CloseDoors();
     }
 
-    public void LaserReceived(GameObject button)
+    public void LaserReceived(GameObject laser)
     {
         lasersReceived++;
         if (lasersReceived >= LasersNeeded)
@@ -54,10 +54,10 @@ public class Door : MonoBehaviour
             OpenDoors();
         }
     }
-    public void LaserRemoved(GameObject button)
+    public void LaserRemoved(GameObject laser)
     {
         lasersReceived--;
-        CloseDoors();
+        if (lasersReceived < LasersNeeded) CloseDoors();
     }
     private void OpenDoors()
     {

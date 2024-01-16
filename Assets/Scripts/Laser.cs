@@ -9,6 +9,8 @@ public class Laser : MonoBehaviour
     public LineRenderer LaserLine;
     Transform m_transform;
 
+    private LaserReceiver hitReceiver;
+
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
@@ -38,15 +40,18 @@ public class Laser : MonoBehaviour
                 Vector2 hitportal = closestHit.collider.gameObject.transform.position;
                 Vector2 offset = hitportal - closestHit.point;
                 PortalControl.Instance.EnableLaser(closestHit.collider.gameObject, offset);
+                if (hitReceiver != null) hitReceiver.LaserRemoved();
             }
             else if (closestHit.collider.gameObject.tag == "Receiver")
             {
                 LaserReceiver receiver = closestHit.collider.gameObject.GetComponent<LaserReceiver>();
                 receiver.LaserReceived();
+                hitReceiver = receiver;
             }
             else
             {
-                PortalControl.Instance.DisableLasers();
+                if (PortalControl.Instance != null) PortalControl.Instance.DisableLasers();
+                if (hitReceiver != null) hitReceiver.LaserRemoved();
             }
         }
         else

@@ -16,6 +16,6 @@ public class Events
 
     public static event Action<GameObject> OnLaserRemoved;
 
-    public static void LaserReceived(GameObject receiver) => OnButtonPressed?.Invoke(receiver);
-    public static void LaserRemoved(GameObject receiver) => OnButtonReleased?.Invoke(receiver);
+    public static void LaserReceived(GameObject receiver) => OnLaserReceived?.Invoke(receiver);
+    public static void LaserRemoved(GameObject receiver) => OnLaserRemoved?.Invoke(receiver);
 }

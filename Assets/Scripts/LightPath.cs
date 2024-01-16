@@ -8,18 +8,22 @@ public class LightPath : MonoBehaviour
     public Sprite CornerInactive;
     public Sprite StraightActive;
     public Sprite StraightInactive;
-    public GameObject Button;
+    public GameObject Activator;
 
     private SpriteRenderer Renderer;
     private void Awake()
     {
-        Events.OnButtonPressed += ButtonPressed;
-        Events.OnButtonReleased += ButtonReleased;
+        Events.OnButtonPressed += Activate;
+        Events.OnButtonReleased += Inactivate;
+        Events.OnLaserReceived += Activate;
+        Events.OnLaserRemoved += Inactivate;
     }
     private void OnDestroy()
     {
-        Events.OnButtonReleased -= ButtonReleased;
-        Events.OnButtonPressed -= ButtonPressed;
+        Events.OnButtonReleased -= Activate;
+        Events.OnButtonPressed -= Inactivate;
+        Events.OnLaserReceived -= Activate;
+        Events.OnLaserRemoved -= Inactivate;
     }
 
     private void Start()
@@ -27,16 +31,16 @@ public class LightPath : MonoBehaviour
         Renderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public void ButtonPressed(GameObject button)
+    public void Activate(GameObject activator)
     {
-        if (button != null && button == Button) 
+        if (activator != null && activator == Activator) 
         {
             TurnOn();
         }
     }
-    public void ButtonReleased(GameObject button)
+    public void Inactivate(GameObject activator)
     {
-        if (button != null && button == Button)
+        if (activator != null && activator == Activator)
         {
             TurnOff();
         }
