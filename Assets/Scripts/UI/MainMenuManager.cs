@@ -5,26 +5,34 @@ using UnityEngine;
 public class MainMenuManager : MonoBehaviour
 {
 
-    public GameObject MainMenuButtons;
+    public GameObject MainMenuSection;
 
-    public GameObject LevelSelectionButtons;
+    public GameObject LevelSelectionSection;
 
-    public GameObject OptionButtons;
+    public GameObject HowToPlaySection;
+
+    public GameObject OptionSection;
 
     public void OnSelectLevelPressed() {
-        MainMenuButtons.SetActive(false);
-        LevelSelectionButtons.SetActive(true);
+        MainMenuSection.SetActive(false);
+        LevelSelectionSection.SetActive(true);
     }
 
     public void OnBackButtonPressed() {
-        MainMenuButtons.SetActive(true);
-        LevelSelectionButtons.SetActive(false);
-        OptionButtons.SetActive(false);
+        MainMenuSection.SetActive(true);
+        LevelSelectionSection.SetActive(false);
+        HowToPlaySection.SetActive(false);
+        OptionSection.SetActive(false);
     }
 
+    public void OnHowToPlayPressed() {
+        HowToPlaySection.SetActive(true);
+        MainMenuSection.SetActive(false);
+
+    }
     public void OnOptionsPressed() {
-        OptionButtons.SetActive(true);
-        MainMenuButtons.SetActive(false);
+        OptionSection.SetActive(true);
+        MainMenuSection.SetActive(false);
         
     }
 
