@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class MovingObject : MonoBehaviour
@@ -9,13 +10,17 @@ public class MovingObject : MonoBehaviour
     public float MovementTime;
     public bool Return;
 
+    private float time = 0;
+
     void Start()
     {
         StartPoint = gameObject.transform.position;
+        time = 0;
     }
     void Update()
     {
-        if (Return) gameObject.transform.position = Vector2.Lerp(StartPoint, EndPoint, Mathf.PingPong(Time.time / MovementTime, 1));
-        else gameObject.transform.position = Vector2.Lerp(StartPoint, EndPoint, Time.time / MovementTime);
+        time += Time.deltaTime;
+        if (Return) gameObject.transform.position = Vector2.Lerp(StartPoint, EndPoint, Mathf.PingPong(time / MovementTime, 1));
+        else gameObject.transform.position = Vector2.Lerp(StartPoint, EndPoint, time / MovementTime);
     }
 }
