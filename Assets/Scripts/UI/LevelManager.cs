@@ -20,10 +20,9 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-
         sounds = FindObjectsOfType<AudioSource>(true);
         foreach (AudioSource source in sounds) {
-            source.volume = Mathf.Log10(PlayerPrefs.GetFloat("SoundVolume", 0.5f));
+            source.volume = Mathf.Log10(PlayerPrefs.GetFloat("SoundVolume", 5f));
         }
 
         Sequence LevelTextSequence = DOTween.Sequence();
