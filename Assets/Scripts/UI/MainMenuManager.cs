@@ -14,7 +14,7 @@ public class MainMenuManager : MonoBehaviour
     public AudioSource selectAudio;
 
     private void Start() {
-        selectAudio.volume = PlayerPrefs.GetFloat("SoundVolume") / 20;
+        selectAudio.volume = PlayerPrefs.GetFloat("SoundVolume") / 11;
         //print("Volume: " + selectAudio.volume + "  " + PlayerPrefs.GetFloat("SoundVolume"));
     }
     public void OnSelectLevelPressed() {
@@ -35,13 +35,11 @@ public class MainMenuManager : MonoBehaviour
         selectAudio.Play();
         HowToPlaySection.SetActive(true);
         MainMenuSection.SetActive(false);
-
     }
     public void OnOptionsPressed() {
         selectAudio.Play();
         OptionSection.SetActive(true);
         MainMenuSection.SetActive(false);
-        
     }
 
     public void ExitGame() {

@@ -14,7 +14,7 @@ public class WinLevelPanel : MonoBehaviour
     public AudioSource selectAudio;
 
     private void Start() {
-        selectAudio.volume = PlayerPrefs.GetFloat("SoundVolume") / 20;
+        selectAudio.volume = PlayerPrefs.GetFloat("SoundVolume") / 11;
 
         currentSceneLevel = SceneManager.GetActiveScene().name;
         nextLevelNumber = Int32.Parse(currentSceneLevel.Replace("Level", "").Replace("Scene", "")) + 1;

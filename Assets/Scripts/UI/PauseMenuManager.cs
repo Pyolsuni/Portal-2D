@@ -21,7 +21,7 @@ public class PauseMenu : MonoBehaviour {
         ppVolume = Camera.main.gameObject.GetComponent<PostProcessVolume>();
         ppVolume.enabled = false;
 
-        selectAudio.volume = PlayerPrefs.GetFloat("SoundVolume") / 20;
+        selectAudio.volume = PlayerPrefs.GetFloat("SoundVolume") / 11;
     }
 
     void Update() {

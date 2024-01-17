@@ -22,7 +22,7 @@ public class HoverFill : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public AudioSource hoverAudio;
 
     private void Start() {
-        hoverAudio.volume = PlayerPrefs.GetFloat("SoundVolume")/20;
+        hoverAudio.volume = PlayerPrefs.GetFloat("SoundVolume")/11;
     }
 
     [ContextMenu("DefaultFillSpeed")]
