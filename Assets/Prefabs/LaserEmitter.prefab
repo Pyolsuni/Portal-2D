@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1219356066235691480}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.53, y: 0, z: 0}
+  m_LocalPosition: {x: 0.18, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6932369134206834402}
   - component: {fileID: 3952231297368894693}
-  - component: {fileID: 8633121289087055769}
+  - component: {fileID: 8461601482399991274}
   m_Layer: 0
   m_Name: LaserEmitter
   m_TagString: Untagged
@@ -239,8 +239,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8633121289087055769
-BoxCollider2D:
+--- !u!60 &8461601482399991274
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -275,15 +275,29 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.11, y: 0.26}
+    oldSize: {x: 0.44, y: 1.04}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.22, y: 0.52}
+      - {x: -0.22, y: -0.52}
+      - {x: 0.085280806, y: -0.52464545}
+      - {x: 0.080524266, y: -0.42065245}
+      - {x: 0.22479427, y: -0.42478758}
+      - {x: 0.22351807, y: -0.2545944}
+      - {x: 0.076594174, y: -0.10587737}
+      - {x: 0.1254971, y: -0.05527389}
+      - {x: 0.124474764, y: 0.05858642}
+      - {x: 0.08355898, y: 0.09939642}
+      - {x: 0.22575021, y: 0.25950396}
+      - {x: 0.22259617, y: 0.42235908}
+      - {x: 0.08431673, y: 0.4195547}
+      - {x: 0.08295807, y: 0.52464545}
+  m_UseDelaunayMesh: 0
 --- !u!1 &5567038581924848559
 GameObject:
   m_ObjectHideFlags: 0
