@@ -12,6 +12,7 @@ public class PortalLaser : MonoBehaviour
 
     private bool LaserEnabled = false;
     private Vector2 offset = Vector2.zero;
+    private LaserReceiver hitReceiver;
 
     private void Awake()
     {
@@ -52,6 +53,11 @@ public class PortalLaser : MonoBehaviour
             {
                 LaserReceiver receiver = closestHit.collider.gameObject.GetComponent<LaserReceiver>();
                 receiver.LaserReceived();
+                hitReceiver = receiver;
+            }
+            else
+            {
+                if (hitReceiver != null) hitReceiver.LaserRemoved();
             }
             Draw2DRay(new Vector2(m_transform.position.x, m_transform.position.y + offset.y), closestHit.point);
         }
