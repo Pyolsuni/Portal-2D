@@ -17,6 +17,8 @@ public class Door : MonoBehaviour
 
     public int LasersNeeded;
     private int lasersReceived;
+
+    public AudioSource doorOpen;
     private void Awake()
     {
         Events.OnButtonPressed += ButtonPressed;
@@ -65,6 +67,8 @@ public class Door : MonoBehaviour
         RightDoor.GetComponent<SpriteRenderer>().sprite = RightDoorOpen;
         LeftDoor.GetComponent<Collider2D>().enabled = false;
         RightDoor.GetComponent<Collider2D>().enabled = false;
+        doorOpen = GetComponent<AudioSource>();
+        doorOpen.Play(0);
     }
     private void CloseDoors()
     {
